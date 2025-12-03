@@ -1,0 +1,51 @@
+/* Slider container เพื่อกรอบรอบภาพ */
+.slider {
+    position: relative;
+    display: inline-block;       /* ขนาดพอดีกับภาพ */
+    border: 8px solid #ffdd57;  /* กรอบทอง */
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    overflow: visible;           /* ภาพไม่ถูก crop */
+    margin: 40px auto;
+    text-align: center;           /* จัดภาพกลาง container */
+}
+
+/* ภาพขนาดต้นฉบับ */
+.slides {
+    display: none;
+    display: block;
+    margin: 0 auto;
+    object-fit: none;  /* ไม่ crop หรือยืด */
+    width: auto;       /* ใช้ขนาดต้นฉบับ */
+    height: auto;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.slides:hover {
+    transform: scale(1.03);
+    filter: brightness(1.1);
+}
+
+/* ปุ่มเลื่อนภาพ */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 12px;
+    font-size: 24px;
+    border-radius: 50%;
+    background: #ffdd57;
+    color: #fff;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.2s, background 0.3s;
+}
+
+.prev:hover, .next:hover {
+    transform: translateY(-50%) scale(1.2);
+    background: #ffc107;
+}
+
+.prev { left: -30px; }
+.next { right: -30px; }
